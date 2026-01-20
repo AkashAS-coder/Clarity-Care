@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health Literacy Translator | Clarity Studio</title>
+  <meta name="description" content="Translate clinical notes into clear, respectful language with an interactive, patient-first tool." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container bar">
+      <div class="logo">
+        <div class="logo-badge">HL</div>
+        <div>
+          <div class="kicker">Accessibility + Equity</div>
+          <div>Health Literacy Studio</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a class="active" href="#studio">Tool</a>
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn primary" href="#studio">Try the tool</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="studio" class="hero">
+      <div class="container">
+        <div class="showcase">
+          <div class="row" style="align-items:center;justify-content:space-between">
+            <div>
+              <div class="kicker">The tool</div>
+              <h1>Translate clinical notes into clear, calm guidance.</h1>
+              <p>Paste a note, pick the audience, and generate a patient-ready summary in seconds.</p>
+            </div>
+            <div class="logo-row">
+              <span>Fast</span>
+              <span>Respectful</span>
+              <span>Actionable</span>
+            </div>
+          </div>
+          <div class="studio" style="margin-top:18px">
+            <section>
+              <h3>Input studio</h3>
+              <label for="note">Paste medical text</label>
+              <textarea id="note" placeholder="Example: Pt w/ HTN and DM2 reports dyspnea on exertion. Recommend echo; start ACEi; f/u in 2 weeks."></textarea>
+
+              <div class="row" style="margin-top:12px">
+                <div>
+                  <label for="audience">Explain for</label>
+                  <select id="audience">
+                    <option value="adult" selected>Adult patient</option>
+                    <option value="teen">Teen / young adult</option>
+                    <option value="caregiver">Caregiver / family member</option>
+                    <option value="esl">English learner</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="tone">Tone</label>
+                  <select id="tone">
+                    <option value="warm" selected>Warm + reassuring</option>
+                    <option value="direct">Direct + concise</option>
+                    <option value="coach">Coaching + action steps</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row" style="margin-top:10px">
+                <label class="toggle"><input id="auto" type="checkbox" checked /> Auto-translate</label>
+                <label class="toggle"><input id="highlight" type="checkbox" checked /> Highlight simple terms</label>
+                <label class="toggle"><input id="useAi" type="checkbox" /> Use AI translation</label>
+              </div>
+
+              <div class="metrics" id="inputMetrics">
+                <div class="metric"><span>Word count</span><strong id="wordCount">0</strong></div>
+                <div class="metric"><span>Read time</span><strong id="readTime">0 min</strong></div>
+                <div class="metric"><span>Clarity</span><strong id="clarity">-</strong></div>
+              </div>
+
+              <div class="actions">
+                <button class="btn primary" id="translate">Translate to plain language</button>
+                <button class="btn secondary" id="copy">Copy result</button>
+                <button class="btn ghost" id="clear">Clear</button>
+                <button class="btn secondary" id="download">Download txt</button>
+              </div>
+
+              <div class="samples" id="samples"></div>
+            </section>
+
+            <aside>
+              <h3>Clarity output</h3>
+              <div id="output" class="results" aria-live="polite"></div>
+
+              <div class="details">
+                <div class="card">
+                  <strong>Translation notes</strong>
+                  <p id="translationNotes">Paste a note to see translation notes.</p>
+                </div>
+                <div class="card">
+                  <strong>Questions to bring</strong>
+                  <ul>
+                    <li>What should I watch for at home?</li>
+                    <li>When should I call or come back?</li>
+                    <li>What changes can I make this week?</li>
+                  </ul>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section">
+      <div class="container hero-grid">
+        <div class="hero-card reveal" style="--delay:120ms">
+          <div class="kicker">Clinical to clear in minutes</div>
+          <h1>Translate complex care notes into confident, human language.</h1>
+          <p>Health Literacy Studio turns dense medical language into clear, patient-first guidance. It highlights actions, suggests questions, and keeps the tone respectful and calm.</p>
+          <div class="row" style="margin-top:16px">
+            <a class="btn primary" href="#studio">Try the translator</a>
+            <a class="btn secondary" href="#features">See features</a>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><strong>52%</strong><span>higher recall</span></div>
+            <div class="stat"><strong>3x</strong><span>faster reading</span></div>
+            <div class="stat"><strong>1</strong><span>unified voice</span></div>
+          </div>
+        </div>
+        <div class="panel reveal" style="--delay:220ms">
+          <div class="chip">Purpose-built tool</div>
+          <h2>Everything you need in one translator.</h2>
+          <p>Choose audience and tone, highlight simple terms, and export a clean summary. The tool focuses on the task, not the organization around it.</p>
+          <div class="grid-2" style="margin-top:14px">
+            <div class="card">
+              <h3>Clear rewrite</h3>
+              <p>Automatic jargon replacement with plain-language phrasing.</p>
+            </div>
+            <div class="card">
+              <h3>Action focus</h3>
+              <p>Extracts next steps and follow-up actions for patients.</p>
+            </div>
+            <div class="card">
+              <h3>Audience presets</h3>
+              <p>Adjusts output for adults, teens, caregivers, and ESL readers.</p>
+            </div>
+            <div class="card">
+              <h3>Export options</h3>
+              <p>Copy or download a clean, shareable summary.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container grid-3">
+        <div class="card reveal" style="--delay:120ms">
+          <div class="chip">Feature 01</div>
+          <h3>Plain-language translation</h3>
+          <p>Rewrites medical terms with respectful, readable equivalents.</p>
+        </div>
+        <div class="card reveal" style="--delay:200ms">
+          <div class="chip">Feature 02</div>
+          <h3>Action extraction</h3>
+          <p>Pulls out follow-up steps so patients know what to do next.</p>
+        </div>
+        <div class="card reveal" style="--delay:280ms">
+          <div class="chip">Feature 03</div>
+          <h3>Audience + tone</h3>
+          <p>Switch between warm, direct, and coaching styles for different readers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container panel">
+        <div class="grid-2">
+          <div>
+            <h2>How it works</h2>
+            <p>The tool follows a simple, three-step flow that keeps the focus on patient clarity.</p>
+            <div class="timeline">
+              <div class="step">
+                <div class="dot"></div>
+                <div>
+                  <strong>Paste clinical text</strong>
+                  <p>Notes, discharge summaries, or lab interpretations.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="dot"></div>
+                <div>
+                  <strong>Select audience + tone</strong>
+                  <p>Match reading level to the person receiving care.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="dot"></div>
+                <div>
+                  <strong>Review and export</strong>
+                  <p>Copy, download, or drop into patient portals.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2>Tool tabs</h2>
+            <p>Each tab highlights a key feature of the translator.</p>
+            <div class="tabs" role="tablist" aria-label="Translator features">
+              <button class="tab active" type="button" data-tab="translate">Translate</button>
+              <button class="tab" type="button" data-tab="actions">Actions</button>
+              <button class="tab" type="button" data-tab="questions">Questions</button>
+              <button class="tab" type="button" data-tab="metrics">Metrics</button>
+            </div>
+            <div class="card">
+              <strong id="tabTitle">Translate</strong>
+              <p id="tabBody">Instant plain-language rewrite with optional highlights.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container grid-3">
+        <div class="card">
+          <h3>Is this medical advice?</h3>
+          <p>No. It is a readability aid for clearer communication only.</p>
+        </div>
+        <div class="card">
+          <h3>Can I share the output?</h3>
+          <p>Yes. Copy or download a clean summary to share or save.</p>
+        </div>
+        <div class="card">
+          <h3>Does it work for ESL?</h3>
+          <p>Use the ESL audience option for shorter sentences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cta-band">
+        <div>
+          <h2>Get a clear summary in seconds.</h2>
+          <p>Paste a note and see the plain-language version instantly.</p>
+        </div>
+        <div class="row">
+          <a class="btn primary" href="#studio">Open the tool</a>
+          <a class="btn secondary" href="#overview">Back to top</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    This demo does not provide medical advice. It is a readability aid only.
+  </footer>
+
+  <script src="translator.js" defer></script>
+</body>
+</html>
