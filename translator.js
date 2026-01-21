@@ -54,7 +54,7 @@ const TONE_HINT = {
   coach: "Here is what you can do next:"
 };
 
-const AI_ENDPOINT = "https://YOUR_KOYEB_APP.koyeb.app/translate";
+const AI_ENDPOINT = "https://health-assist-lvkw.onrender.com/translate";
 
 const SAMPLES = [
   {
