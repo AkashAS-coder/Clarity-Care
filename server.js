@@ -9,7 +9,7 @@ const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "openai/gpt-4o-mini";
 const OPENROUTER_BASE_URL = process.env.OPENROUTER_BASE_URL || "https://openrouter.ai/api/v1";
 const OPENROUTER_SITE = process.env.OPENROUTER_SITE || "";
-const OPENROUTER_APP = process.env.OPENROUTER_APP || "Health Literacy Translator";
+const OPENROUTER_APP = process.env.OPENROUTER_APP || "Clarity Care";
 
 if(!OPENROUTER_API_KEY){
   console.warn("Missing OPENROUTER_API_KEY. Set it in your Koyeb service.");
