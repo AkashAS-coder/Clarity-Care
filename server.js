@@ -15,6 +15,10 @@ if(!OPENROUTER_API_KEY){
   console.warn("Missing OPENROUTER_API_KEY. Set it in your Koyeb service.");
 }
 
+app.get("/", (req, res) => {
+  res.status(200).json({ status: "ok", endpoints: ["/translate"] });
+});
+
 app.post("/translate", async (req, res) => {
   try{
     const { text, audience, tone } = req.body || {};
